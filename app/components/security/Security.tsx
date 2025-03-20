@@ -7,6 +7,29 @@ const Security = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [error, setError] = useState('');
 
+    const user = {
+        _id: "ID_USER",
+        email: "nouveau.utilisateur@example.com",
+        firstName: "Jean",
+        lastName: "Dupont",
+        phone: "0123456789",
+        address: "123 Rue Exemple",
+        post: "Web dev",
+        niveau: {
+            observation: "E",
+            action: "0",
+            approbation: "0"
+        },
+        accessLevel: {
+            observation: "E",
+            action: "0",
+            approbation: "0"
+        },
+        createdById: "ID_USER_CREATOR",
+        createdAt: "2024-11-27T12:00:00.000Z",
+        updatedAt: "2024-11-27T12:00:00.000Z"
+    };
+
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newPassword = e.target.value;
         setPassword(newPassword);
@@ -101,6 +124,12 @@ const Security = () => {
                             </p>
                         )}
                     </div>
+                </div>
+                <div>
+                    <h3 className="text-lg font-bold text-gray-900">User Access Levels</h3>
+                    <p className="text-gray-700">Observation: {user.accessLevel.observation}</p>
+                    <p className="text-gray-700">Action: {user.accessLevel.action}</p>
+                    <p className="text-gray-700">Approbation: {user.accessLevel.approbation}</p>
                 </div>
             </div>
         </section>

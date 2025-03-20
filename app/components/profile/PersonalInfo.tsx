@@ -22,11 +22,11 @@ const PersonalInfo = () => {
 
     const handleSave = () => {
         if (!firstName.trim() || !lastName.trim() || !phone.trim()) {
-            alert("Veuillez completez tous les champs");
+            alert("Veuillez compléter tous les champs");
             return;
         }
 
-        const phoneRegex = /^[+0-9]{1,}$/;
+        const phoneRegex = /^\+?[0-9\s-]{7,15}$/;
         if (!phoneRegex.test(phone)) {
             alert("Veuillez entrer un numéro de téléphone valide");
             return;
@@ -42,7 +42,7 @@ const PersonalInfo = () => {
         const value = e.target.value;
         setPhone(value);
 
-        const phoneRegex = /^[+0-9]{1,}$/;
+        const phoneRegex = /^\+?[0-9\s-]{7,15}$/;
         if (!phoneRegex.test(value)) {
             setPhoneError("Veuillez entrer un numéro de téléphone valide");
         } else {
